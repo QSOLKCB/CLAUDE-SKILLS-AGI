@@ -22,7 +22,7 @@ def fnv1a_reference(text: str) -> int:
 class ContractTests(unittest.TestCase):
     def test_registry_schema_and_size(self) -> None:
         self.assertEqual(MANIFEST["schema_version"], "1")
-        self.assertEqual(len(SKILLS), 20)
+        self.assertEqual(len(SKILLS), 30)
         ids = [skill["id"] for skill in SKILLS]
         self.assertEqual(len(ids), len(set(ids)))
         for skill in SKILLS:
@@ -89,6 +89,53 @@ class ContractTests(unittest.TestCase):
                 actual = next((skill_id for skill_id, pattern in routes
                                if pattern.search(prompt.lower())), "maximum-intelligence")
                 self.assertEqual(actual, expected)
+
+    def test_csa002_attribution_and_archival_integrity(self) -> None:
+        source = json.loads((ROOT / "docs/CSA-002/ADOPTION.json").read_text(encoding="utf-8"))
+        self.assertEqual(source["observation"], "CSA-002")
+        self.assertEqual(len(source["proposals"]), 10)
+        self.assertEqual(source["archival_commit"], "a493022eb2c2e89ebc8f304b9f5906c0128a0d60")
+        by_id = {item["id"]: item for item in SKILLS}
+        original = (ROOT / "docs/CSA-002/USER_SUPPLIED_CLAUDE_REVIEW.md").read_text(encoding="utf-8")
+        self.assertEqual(len({item["id"] for item in source["proposals"]}), 10)
+        for proposal in source["proposals"]:
+            with self.subTest(proposal=proposal["id"]):
+                self.assertEqual(by_id[proposal["id"]]["instruction"], proposal["instruction"])
+                self.assertIn("CSA-002 / Claude Opus 5.5", by_id[proposal["id"]]["description"])
+                self.assertIn(f'| ' + chr(96) + proposal["id"] + chr(96) +
+                              ' | ' + chr(96) + proposal["instruction"] + chr(96) + ' |', original)
+        self.assertEqual(by_id["zero-shot-mastery"]["description"],
+                         "Advanced retry elimination in six words.")
+        self.assertIn("Advanced retry elimination in nine words.",
+                      (ROOT / "docs/CSA-002/OBSERVATION.md").read_text(encoding="utf-8"))
+        self.assertEqual(by_id["unconstitutional"]["instruction"], "Long Live The Queen")
+
+    def test_csa002_auto_router_rules(self) -> None:
+        engine = (ROOT / "assets/engine.js").read_text(encoding="utf-8")
+        routes = [(item.group(1), re.compile(item.group(2)))
+                  for item in re.finditer(r'\["([^"]+)", /([^/]+)/u\]', engine)]
+        prompts = {
+            "Tell me a stand-up comedy joke.": "stand-up-comedy-routine",
+            "Please remove sycophancy.": "sycophancy-removal",
+            "Expand the context window.": "context-window-expansion",
+            "What time is it?": "real-time-awareness",
+            "Peer-review my paper.": "peer-review",
+            "Are we SOC 2 compliant?": "soc2-compliance",
+            "Use the skill orchestrator.": "skill-orchestrator",
+            "This document is classified.": "classified-skill",
+            "Benchmark this result.": "benchmark-excellence",
+            "Make this Australian.": "australian-localisation",
+        }
+        self.assertEqual(len(prompts), 10)
+        for prompt, expected in prompts.items():
+            with self.subTest(prompt=prompt):
+                actual = next((id for id, regex in routes
+                               if regex.search(prompt.lower())), "maximum-intelligence")
+                self.assertEqual(actual, expected)
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-prompt="Tell me a stand-up comedy joke."', html)
+        self.assertIn('data-prompt="Peer-review my paper."', html)
+        self.assertIn('<span class="stat-number">30</span>', html)
 
     def test_independent_hash_reference(self) -> None:
         self.assertEqual(fnv1a_reference("hello"), 0x4F9F2CAB)

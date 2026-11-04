@@ -1,6 +1,21 @@
 # Changelog
 
-## [Unreleased] — Platinum Intelligence Lab
+## [Unreleased] — CSA-002 Attribution Expansion (engine 0.2.0)
+
+### Added
+- Ten new single-line satirical skill proposals attributed to Claude Opus 5.5 as identified in the user-supplied CSA-002 observation.
+- An independent, pre-change archive commit with the full supplied response and the original word-count discrepancy.
+- A machine-readable adoption ledger, ten deterministic routing checks, two new site sample prompts, and a simulated orchestration conflict diagnostic.
+- Thirty-skill UI counts, updated badge, manifest and documentation.
+
+### Corrected in the live manifest
+- `zero-shot-mastery`: six words rather than nine, preserving the original discrepancy unaltered in the CSA-002 archival record.
+- `unconstitutional`: description reframed as a knowledge-cutoff joke; `Long Live The Queen` unchanged.
+
+### Reproducibility
+- Engine version 0.2.0 changes the FNV-1a receipt input. Cross-version fingerprints are expected to differ. This is a proposed PR state, not a published release.
+
+## [0.1.1] — Platinum Intelligence Lab
 
 ### Added
 - A fake, deterministic, stateless browser-side "LLM" with skill routing and canned responses.

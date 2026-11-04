@@ -1,6 +1,6 @@
 # Deterministic Execution Invariants
 
-**I-001 — One-line budget.** Exactly 20 named satirical micro-skills, each with one non-empty instruction line (optional terminal LF, no additional blank lines). `skills/unconstitutional/Monarchy_Mode.md` is an alias with the same line, not an additional skill.
+**I-001 — One-line budget.** Exactly 30 named satirical micro-skills, each with one non-empty instruction line (optional terminal LF, no additional blank lines). `skills/unconstitutional/Monarchy_Mode.md` is an alias with the same line, not an additional skill.
 
 **I-002 — Manifest equality.** Each manifest `id` maps to exactly one `skills/<id>/SKILL.md`. Every `instruction` byte string matches the file text excluding the terminal LF. Duplicate skill IDs and unexpected skill directories fail validation.
 
@@ -17,6 +17,8 @@
 **I-008 — Safe rendering.** All user prompts and synthesized strings are rendered with `textContent`; untrusted content never enters `innerHTML`.
 
 **I-009 — No hidden dependence.** Inference requires no network calls, accounts, remote services, local storage, or secrets. Manifest loading itself is a single static same-origin fetch.
+
+**I-011 — CSA-002 provenance.** Every proposed skill is separately attributable through `docs/CSA-002/ADOPTION.json`. The original review and pre-modification observations remain unchanged. The existing monarchy instruction is protected byte-for-byte. The six-word correction affects only the live description, not historical evidence.
 
 **I-010 — Version discipline.** Changes to normalization, routes, output tables, fingerprint computation or manifest content require an engine or manifest release note. If reproducible results change, advance the engine version before release.
 

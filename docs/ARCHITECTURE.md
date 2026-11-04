@@ -28,7 +28,7 @@
 3. Each prompt is processed independently by `infer()` in `assets/engine.js`; displayed chat history does **not** influence subsequent output.
 4. NFKC Unicode normalization, whitespace folding and lowercase canonicalization produce a normalized prompt.
 5. The seed, engine version, routed skill ID, canonical instruction and normalized prompt are joined with the ASCII unit separator (U+001F) and hashed using FNV-1a on UTF-8 bytes.
-6. A fixed intent response bank is indexed using the integer hash modulo its response count. AGI and Monarchy Mode intentionally use fixed output overrides.
+6. A fixed intent response bank is indexed using the integer hash modulo its response count. AGI and Monarchy Mode intentionally use fixed output overrides. CSA-002 adds a separate fixed-text **simulated** conflict diagnostic for Skill Orchestrator; it never reads or executes other SKILL.md files.
 7. The browser displays output and lets the user copy a JSON receipt without timestamps or external uploads.
 
 ## Static hosting

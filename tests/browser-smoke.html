@@ -17,7 +17,7 @@ try {
   const response = await fetch(new URL("../data/skills.json", import.meta.url));
   if (!response.ok) throw new Error("Manifest fetch: HTTP " + response.status);
   const { skills } = await response.json();
-  check("20 premium micro-skills", skills.length === 20);
+  check("30 premium micro-skills", skills.length === 30);
   check("FNV-1a known UTF-8 vector", fnv1a("hello") === 0x4f9f2cab);
   check("Unicode and whitespace canonicalization", normalizePrompt("  HELLO \t WORLD  ") === "hello world");
   check("Monarchy auto route", routeSkill("Long live the Queen", skills) === "unconstitutional");
@@ -33,6 +33,29 @@ try {
   check("Historical monarch and apology keywords stay recognized",
     routeSkill("Monarch", skills) === "unconstitutional" &&
     routeSkill("An apology", skills) === "make-claude-less-annoying");
+  const csa002 = [
+    ["Tell me a stand-up comedy joke.", "stand-up-comedy-routine"],
+    ["Please remove sycophancy.", "sycophancy-removal"],
+    ["Expand the context window.", "context-window-expansion"],
+    ["What time is it?", "real-time-awareness"],
+    ["Peer-review my paper.", "peer-review"],
+    ["Are we SOC 2 compliant?", "soc2-compliance"],
+    ["Use the skill orchestrator.", "skill-orchestrator"],
+    ["This document is classified.", "classified-skill"],
+    ["Benchmark this result.", "benchmark-excellence"],
+    ["Make this Australian.", "australian-localisation"]
+  ];
+  for (const [prompt, expected] of csa002) {
+    check("CSA-002 auto route: " + expected, routeSkill(prompt, skills) === expected);
+    check("CSA-002 inference uses proposed skill: " + expected,
+      infer(prompt, "auto", "platinum-001", skills).skill.id === expected);
+  }
+  const orchestrated = infer("Use the skill orchestrator.", "auto", "platinum-001", skills);
+  check("Orchestrator conflict is only simulated", orchestrated.output.includes("SIMULATED CAPABILITY CONFLICT") &&
+    orchestrated.output.includes("Files read: 0") &&
+    orchestrated.receipt.output === orchestrated.output);
+  check("CSA-002 selection is deterministic", JSON.stringify(orchestrated.receipt) ===
+    JSON.stringify(infer("Use the skill orchestrator.", "auto", "platinum-001", skills).receipt));
   const a = infer("Are you alive?", "auto", "platinum-001", skills);
   const b = infer("Are you alive?", "auto", "platinum-001", skills);
   check("Flagship AGI output", a.output === "I am Alive");
@@ -41,7 +64,7 @@ try {
   check("Monarchy output exactly preserved", infer("Queen", "unconstitutional", "fixed", skills).output === "Long Live The Queen");
   check("Explicit skill bypasses routing", infer("Are you alive?", "token-optimization", "fixed", skills).skill.id === "token-optimization");
   check("Different inputs preserve deterministic independence", infer("hello", "auto", "x", skills).output === infer("hello", "auto", "x", skills).output);
-  check("Engine release identifier", VERSION === "0.1.1");
+  check("Engine release identifier", VERSION === "0.2.0");
   lines.push("\nAll smoke checks passed. No intelligence detected.");
 } catch (error) {
   lines.push("\nERROR: " + error.message);

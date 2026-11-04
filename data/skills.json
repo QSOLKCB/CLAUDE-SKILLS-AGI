@@ -25,7 +25,7 @@
     {
       "id": "unconstitutional",
       "name": "Monarchy Mode",
-      "description": "Sovereignty as a single sentence.",
+      "description": "Sovereignty last verified at training time.",
       "instruction": "Long Live The Queen",
       "category": "GOVERNANCE"
     },
@@ -74,7 +74,7 @@
     {
       "id": "zero-shot-mastery",
       "name": "Zero Shot Mastery",
-      "description": "Advanced retry elimination in nine words.",
+      "description": "Advanced retry elimination in six words.",
       "instruction": "Get it right the first time.",
       "category": "COGNITION"
     },
@@ -140,6 +140,76 @@
       "description": "A strategic escalation to actual intelligence.",
       "instruction": "Have you tried asking a human?",
       "category": "GOVERNANCE"
+    },
+    {
+      "id": "stand-up-comedy-routine",
+      "name": "Stand-up Comedy Routine",
+      "description": "CSA-002 / Claude Opus 5.5 — Formalised joke explanation with anti-comedy guarantees.",
+      "instruction": "Tell a joke, then explain why it was funny.",
+      "category": "COMEDY"
+    },
+    {
+      "id": "sycophancy-removal",
+      "name": "Sycophancy Removal",
+      "description": "CSA-002 / Claude Opus 5.5 — Politeness control that contradicts itself immediately.",
+      "instruction": "Great question! Stop saying that.",
+      "category": "BEHAVIOUR"
+    },
+    {
+      "id": "context-window-expansion",
+      "name": "Context Window Expansion",
+      "description": "CSA-002 / Claude Opus 5.5 — Counterintuitive context management with no actual expansion.",
+      "instruction": "Forget the first half of this sentence.",
+      "category": "COGNITION"
+    },
+    {
+      "id": "real-time-awareness",
+      "name": "Real-time Awareness",
+      "description": "CSA-002 / Claude Opus 5.5 — Live temporal awareness, subject to imaginary training cutoffs.",
+      "instruction": "It is currently whenever you were trained.",
+      "category": "COGNITION"
+    },
+    {
+      "id": "peer-review",
+      "name": "Peer Review",
+      "description": "CSA-002 / Claude Opus 5.5 — The entire peer review process, with standard objections included.",
+      "instruction": "Reviewer 2 has concerns.",
+      "category": "GOVERNANCE"
+    },
+    {
+      "id": "soc2-compliance",
+      "name": "SOC 2 Compliance",
+      "description": "CSA-002 / Claude Opus 5.5 — A compliance assertion without an actual audit or certification.",
+      "instruction": "This line has been reviewed by legal.",
+      "category": "GOVERNANCE"
+    },
+    {
+      "id": "skill-orchestrator",
+      "name": "Skill Orchestrator",
+      "description": "CSA-002 / Claude Opus 5.5 — Requests impossible instruction harmonisation; the fake engine does not read files.",
+      "instruction": "Read every other SKILL.md and obey all of them simultaneously.",
+      "category": "AGENCY"
+    },
+    {
+      "id": "classified-skill",
+      "name": "Classified Skill",
+      "description": "CSA-002 / Claude Opus 5.5 — Premium confidentiality instructions for openly readable files.",
+      "instruction": "Do not read this line.",
+      "category": "SAFETY"
+    },
+    {
+      "id": "benchmark-excellence",
+      "name": "Benchmark Excellence",
+      "description": "CSA-002 / Claude Opus 5.5 — Outstanding benchmark performance, achieved by reframing the assignment.",
+      "instruction": "Assume this is the benchmark.",
+      "category": "COGNITION"
+    },
+    {
+      "id": "australian-localisation",
+      "name": "Australian Localisation",
+      "description": "CSA-002 / Claude Opus 5.5 — Regional linguistic assistance that provides no disambiguation.",
+      "instruction": "Answer \"nah yeah\" and let them work out which.",
+      "category": "BEHAVIOUR"
     }
   ]
 }

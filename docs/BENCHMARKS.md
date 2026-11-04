@@ -4,7 +4,7 @@
 
 | Claim | Evidence | Status |
 |---|---|---|
-| 20 one-line micro-skills | `tests/test_contracts.py` | Automated structural check |
+| 30 one-line micro-skills | `tests/test_contracts.py` | Automated structural check |
 | Manifest corresponds to disk | Same Python test | Automated structural check |
 | FNV-1a reference vector | Python independent oracle + browser test | Tests provided; run to verify |
 | Same input yields same output | `tests/browser-smoke.html` | Browser-executed test provided |
@@ -24,3 +24,7 @@ The same browser version and source commit should be used when collecting reprod
 ## Potentially groundbreaking future research
 
 We might eventually benchmark how much more convincing a landing page becomes as the model's parameter count approaches zero. This experiment has not been performed.
+
+## CSA-002: hypotheses, not measured improvements
+
+The ten proposals attributed to the user-supplied Claude Opus 5.5 review are tested only for one-line preservation, deterministic routing, manifest identity and predictable canned responses. The browser's simulated `skill-orchestrator` conflict report is a **hard-coded diagnostic**, not an LLM instruction-conflict result. The archived critique suggests future controlled measurements of actual model behaviour, but **none have been performed** for CSA-002. See `docs/CSA-002/README.md`.
