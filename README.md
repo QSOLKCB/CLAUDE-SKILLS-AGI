@@ -47,6 +47,10 @@ python3 -m unittest discover -s tests -v
 
 Run `http://127.0.0.1:8000/tests/browser-smoke.html` for browser-executed determinism checks. This optional test needs no third-party packages.
 
+## GitHub Pages deployment
+
+The separate [Pages publishing workflow](.github/workflows/pages.yml) verifies the site and deploys it on pushes to `main`. Set **Settings → Pages → Build and deployment → Source → GitHub Actions** once; enabling Pages or passing unit tests alone does not publish the site. See the [deployment runbook](docs/DEPLOYMENT.md) for verification and recovery.
+
 ## Why the evidence receipts?
 
 Because the joke is stronger when the engineering is real. Given the same **engine version + normalized prompt + selected skill + seed + manifest instruction**, the output is byte-for-byte repeatable. History never enters inference. See [Invariants](docs/INVARIANTS.md). A 32-bit FNV fingerprint is an identifier for demonstration purposes, **not** a cryptographic hash, signature, or audit proof.

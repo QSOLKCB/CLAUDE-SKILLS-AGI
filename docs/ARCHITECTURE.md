@@ -33,7 +33,7 @@
 
 ## Static hosting
 
-GitHub Pages serves the site from the repository root (`index.html`). All application assets use local relative paths compatible with a project Pages URL. A simple local HTTP server is sufficient; `file://` imports are not supported in all browsers.
+A dedicated GitHub Actions workflow verifies the repository, stages only static site files under `_site/`, and deploys that artifact when the Pages publishing source is set to **GitHub Actions**. Relative asset paths remain compatible with the repository project URL. See [Deployment](DEPLOYMENT.md). A simple local HTTP server is sufficient; `file://` imports are not supported in all browsers.
 
 ## Explicit limitations
 
