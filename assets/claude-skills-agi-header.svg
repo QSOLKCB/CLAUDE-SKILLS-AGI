@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" role="img" aria-labelledby="title desc">
+<title id="title">CLAUDE-SKILLS-AGI — The Platinum Intelligence Lab</title>
+<desc id="desc">Cinematic midnight purple and gold title banner with a radiant star, orbit, laurels and the words Artificial General Intelligence by Declaration. Independent satire.</desc>
+<defs>
+  <linearGradient id="night" x2=".9" y2="1"><stop stop-color="#080d1b"/><stop offset=".49" stop-color="#17142a"/><stop offset="1" stop-color="#0a0920"/></linearGradient>
+  <radialGradient id="core"><stop stop-color="#c088b9" stop-opacity=".4"/><stop offset=".32" stop-color="#514486" stop-opacity=".26"/><stop offset="1" stop-color="#0b1021" stop-opacity="0"/></radialGradient>
+  <radialGradient id="dawn"><stop stop-color="#ffdc98"/><stop offset=".13" stop-color="#c9987f" stop-opacity=".85"/><stop offset=".45" stop-color="#7c55a7" stop-opacity=".3"/><stop offset="1" stop-color="#15142e" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#fff7d1"/><stop offset=".33" stop-color="#ffd67d"/><stop offset=".62" stop-color="#d69a46"/><stop offset="1" stop-color="#ffe1a0"/></linearGradient>
+  <linearGradient id="silver" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fffdfb"/><stop offset=".72" stop-color="#efeaff"/><stop offset=".83" stop-color="#ffda92"/><stop offset="1" stop-color="#c99646"/></linearGradient>
+  <linearGradient id="rim" x2="1" y2=".4"><stop stop-color="#ffce81"/><stop offset=".28" stop-color="#d69bf2"/><stop offset=".7" stop-color="#5f5dbd"/><stop offset="1" stop-color="#ffc07d"/></linearGradient>
+  <linearGradient id="edge" x2="1" y2="1"><stop stop-color="#f4be76"/><stop offset=".5" stop-color="#9179c8"/><stop offset="1" stop-color="#ffd19d"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="11"/></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="34"/></filter>
+  <clipPath id="rounded"><rect x="8" y="8" width="1484" height="484" rx="35"/></clipPath>
+  <g id="leaf"><path d="M0 0 C-10 -2 -16 -18 -15 -30 C-4 -25 4 -13 0 0Z" fill="url(#gold)"/></g>
+  <g id="branch"><path d="M0 0 Q-70 -34 -100 -121 Q-116 -175 -106 -216" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    <use href="#leaf" transform="translate(-14 -10) rotate(-36)"/><use href="#leaf" transform="translate(-30 -29) rotate(-65)"/><use href="#leaf" transform="translate(-42 -46) rotate(-24)"/><use href="#leaf" transform="translate(-55 -69) rotate(-65)"/><use href="#leaf" transform="translate(-70 -89) rotate(-12)"/><use href="#leaf" transform="translate(-76 -115) rotate(-67)"/><use href="#leaf" transform="translate(-91 -137) rotate(0)"/><use href="#leaf" transform="translate(-94 -167) rotate(-54)"/><use href="#leaf" transform="translate(-106 -188) rotate(8)"/>
+  </g>
+</defs>
+<g clip-path="url(#rounded)">
+  <rect width="1500" height="500" fill="url(#night)"/>
+  <ellipse cx="750" cy="160" rx="610" ry="330" fill="url(#core)"/>
+  <ellipse cx="750" cy="530" rx="690" ry="250" fill="url(#dawn)"/>
+  <g fill="#e3d6ff" opacity=".55">
+    <circle cx="160" cy="90" r="1"/><circle cx="275" cy="67" r="1.6"/><circle cx="340" cy="166" r="1"/><circle cx="1195" cy="84" r="1.5"/><circle cx="1327" cy="139" r="1"/><circle cx="1290" cy="58" r="1"/><circle cx="1005" cy="55" r="1"/><circle cx="80" cy="240" r="1.2"/><circle cx="1430" cy="280" r="1"/><circle cx="1180" cy="198" r="1.3"/><circle cx="500" cy="67" r="1.3"/><circle cx="960" cy="170" r=".9"/><circle cx="60" cy="125" r="1"/>
+  </g>
+  <path d="M0 240 Q90 155 185 260 T350 265 L380 500 H0Z" fill="#45315f" opacity=".35" filter="url(#soft)"/>
+  <path d="M1500 240 Q1375 130 1240 270 T1090 270 L1090 500 H1500Z" fill="#614180" opacity=".35" filter="url(#soft)"/>
+  <ellipse cx="750" cy="559" rx="800" ry="168" fill="#3b2f75" opacity=".75"/>
+  <ellipse cx="750" cy="549" rx="805" ry="158" fill="none" stroke="#ab8df1" stroke-opacity=".6" stroke-width="13" filter="url(#glow)"/>
+  <ellipse cx="750" cy="549" rx="805" ry="158" fill="none" stroke="url(#rim)" stroke-width="3"/>
+  <circle cx="750" cy="153" r="94" fill="none" stroke="#8f80e1" stroke-opacity=".32" stroke-width="8" filter="url(#glow)"/>
+  <circle cx="750" cy="153" r="94" fill="none" stroke="#a8a1f8" stroke-opacity=".8" stroke-width="2"/>
+  <g transform="translate(750 156)" stroke="url(#gold)" stroke-width="10" stroke-linecap="round">
+    <path d="M0 -59 V59 M-59 0 H59 M-42 -42 L42 42 M-42 42 L42 -42" filter="url(#glow)" opacity=".7"/>
+    <path d="M0 -59 V59 M-59 0 H59 M-42 -42 L42 42 M-42 42 L42 -42"/>
+  </g>
+  <g opacity=".85" transform="translate(608 234) scale(.67)"><use href="#branch"/></g>
+  <g opacity=".85" transform="translate(892 234) scale(-.67 .67)"><use href="#branch"/></g>
+  <rect x="21" y="21" width="1458" height="458" rx="31" fill="none" stroke="url(#edge)" stroke-width="2"/>
+  <rect x="30" y="30" width="1440" height="440" rx="25" fill="none" stroke="#ccade0" stroke-opacity=".2"/>
+  <text x="750" y="324" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="800" letter-spacing="-4" text-anchor="middle" fill="url(#silver)">CLAUDE-SKILLS-AGI</text>
+  <path d="M250 361 H372 M1128 361 H1250" fill="none" stroke="url(#gold)" stroke-width="2"/>
+  <text x="750" y="370" font-family="Arial,Helvetica,sans-serif" font-size="26" letter-spacing="9" text-anchor="middle" fill="#ebdfdf">THE PLATINUM INTELLIGENCE LAB</text>
+  <rect x="290" y="397" width="920" height="55" rx="28" fill="#090c1a" fill-opacity=".83" stroke="#db9c65" stroke-width="1.5"/>
+  <text x="750" y="432" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="600" letter-spacing="4" text-anchor="middle" fill="url(#gold)">ARTIFICIAL GENERAL INTELLIGENCE BY DECLARATION</text>
+</g>
+</svg>

@@ -1,14 +1,21 @@
-# CLAUDE-SKILLS-AGI
+<h1 align="center" id="claude-skills-agi">
+  <a href="https://qsolkcb.github.io/CLAUDE-SKILLS-AGI/">
+    <img src="./assets/claude-skills-agi-header.svg" alt="CLAUDE-SKILLS-AGI — The Platinum Intelligence Lab" width="100%">
+  </a>
+</h1>
 
-[![CI](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml)
-[![Pages Deployment](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-2563EB.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml"><img alt="CI status" src="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml/badge.svg?branch=main"></a>
+  <a href="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml"><img alt="Pages deployment status" src="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml/badge.svg?branch=main"></a>
+  <a href="./LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2563EB.svg"></a>
+</p>
+<p align="center">
+  <a href="./skills/"><img alt="Twenty premium skills" src="https://img.shields.io/badge/premium%20skills-20-8B5CF6.svg"></a>
+  <a href="./assets/engine.js"><img alt="Engine v0.1.1" src="https://img.shields.io/badge/engine-v0.1.1-6366F1.svg"></a>
+  <a href="./docs/ARCHITECTURE.md"><img alt="Zero runtime dependencies" src="https://img.shields.io/badge/runtime%20dependencies-0-059669.svg"></a>
+</p>
 
-[![Skills: 20](https://img.shields.io/badge/premium%20skills-20-8B5CF6.svg)](skills/)
-[![Engine: v0.1.1](https://img.shields.io/badge/engine-v0.1.1-6366F1.svg)](assets/engine.js)
-[![Runtime Dependencies: 0](https://img.shields.io/badge/runtime%20dependencies-0-059669.svg)](docs/ARCHITECTURE.md)
-
-### Artificial General Intelligence. One Sentence Away.
+<h3 align="center">Artificial General Intelligence. One Sentence Away.</h3>
 
 **Enterprise-grade Artificial General Intelligence through advanced Claude Skills. Zero dependencies. One sentence per skill. Infinite ambition.**
 
