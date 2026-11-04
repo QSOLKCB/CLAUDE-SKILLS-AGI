@@ -1,0 +1,15 @@
+name: Verify platinum micro-skills
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  structural-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Run Python standard-library contracts
+        run: python3 -m unittest discover -s tests -v
