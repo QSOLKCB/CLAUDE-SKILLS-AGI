@@ -21,6 +21,18 @@ try {
   check("FNV-1a known UTF-8 vector", fnv1a("hello") === 0x4f9f2cab);
   check("Unicode and whitespace canonicalization", normalizePrompt("  HELLO \t WORLD  ") === "hello world");
   check("Monarchy auto route", routeSkill("Long live the Queen", skills) === "unconstitutional");
+  // These are the literal prompt-chip values shipped in index.html.
+  check("Advertised monarchy sample routes correctly",
+    routeSkill("Long live the monarchy!", skills) === "unconstitutional");
+  check("Advertised apology sample routes correctly",
+    routeSkill("Please stop apologising.", skills) === "make-claude-less-annoying");
+  check("Monarchy sample inference uses royal instruction",
+    infer("Long live the monarchy!", "auto", "platinum-001", skills).output === "Long Live The Queen");
+  check("Apology sample inference uses less-annoying instruction",
+    infer("Please stop apologising.", "auto", "platinum-001", skills).output.startsWith("Stop apologising.\n\n"));
+  check("Historical monarch and apology keywords stay recognized",
+    routeSkill("Monarch", skills) === "unconstitutional" &&
+    routeSkill("An apology", skills) === "make-claude-less-annoying");
   const a = infer("Are you alive?", "auto", "platinum-001", skills);
   const b = infer("Are you alive?", "auto", "platinum-001", skills);
   check("Flagship AGI output", a.output === "I am Alive");
@@ -29,7 +41,7 @@ try {
   check("Monarchy output exactly preserved", infer("Queen", "unconstitutional", "fixed", skills).output === "Long Live The Queen");
   check("Explicit skill bypasses routing", infer("Are you alive?", "token-optimization", "fixed", skills).skill.id === "token-optimization");
   check("Different inputs preserve deterministic independence", infer("hello", "auto", "x", skills).output === infer("hello", "auto", "x", skills).output);
-  check("Engine release identifier", VERSION === "0.1.0");
+  check("Engine release identifier", VERSION === "0.1.1");
   lines.push("\nAll smoke checks passed. No intelligence detected.");
 } catch (error) {
   lines.push("\nERROR: " + error.message);

@@ -72,6 +72,24 @@ class ContractTests(unittest.TestCase):
         self.assertIn("Math.imul", engine)
         self.assertIn("TextEncoder", engine)
 
+    def test_advertised_auto_route_samples(self) -> None:
+        """Evaluate JS regex literals with Python's equivalent ASCII regex rules."""
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        engine = (ROOT / "assets/engine.js").read_text(encoding="utf-8")
+        routes = [(item.group(1), re.compile(item.group(2)))
+                  for item in re.finditer(r'\["([^"]+)", /([^/]+)/u\]', engine)]
+        self.assertGreaterEqual(len(routes), 2)
+        samples = (
+            ("Long live the monarchy!", "unconstitutional"),
+            ("Please stop apologising.", "make-claude-less-annoying"),
+        )
+        for prompt, expected in samples:
+            with self.subTest(prompt=prompt):
+                self.assertIn(f'data-prompt="{prompt}"', html)
+                actual = next((skill_id for skill_id, pattern in routes
+                               if pattern.search(prompt.lower())), "maximum-intelligence")
+                self.assertEqual(actual, expected)
+
     def test_independent_hash_reference(self) -> None:
         self.assertEqual(fnv1a_reference("hello"), 0x4F9F2CAB)
         self.assertEqual(fnv1a_reference(""), 0x811C9DC5)

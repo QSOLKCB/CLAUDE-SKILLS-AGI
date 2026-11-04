@@ -14,5 +14,17 @@
 - No evidence of consciousness was observed or sought.
 - Zero additional runtime dependencies were introduced.
 
+### Fixed
+- Auto-routing recognizes the advertised "Long live the monarchy!" and
+  "Please stop apologising." samples, including complete monarchy and
+  apology word forms without partial-word matches.
+- Added native-browser inference regressions and an independent CI-checked
+  ASCII regex oracle against the exact sample-chip text.
+
+### Reproducibility
+- Engine version advanced from `0.1.0` to `0.1.1`: the version is part
+  of the FNV-1a receipt input, so all computed fingerprints change.
+  Pin engine version and source commit for cross-release comparisons.
+
 ### Breaking changes
 - None. We remain committed to one sentence per skill.

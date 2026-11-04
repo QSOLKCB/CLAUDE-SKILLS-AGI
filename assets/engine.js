@@ -1,5 +1,5 @@
 // Deterministic parody engine. No models, network inference, clock, or RNG.
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 export const DEFAULT_SEED = "platinum-001";
 
 export function normalizePrompt(value) {
@@ -20,8 +20,8 @@ export function routeSkill(prompt, skills) {
   const p = normalizePrompt(prompt);
   const rules = [
     ["claude-skills-agi", /\b(agi|alive|conscious|sentient|life)\b/u],
-    ["unconstitutional", /\b(queen|king|royal|monarch|crown|throne)\b/u],
-    ["make-claude-less-annoying", /\b(sorry|apolog|annoying|apology)\b/u],
+    ["unconstitutional", /\b(queen|king|royal|monarch(?:y|ies|s|ist|ists)?|crown|throne)\b/u],
+    ["make-claude-less-annoying", /\b(sorry|apolog(?:y|ies|ise|ises|ised|ising|ize|izes|ized|izing|etic|etically)|annoying)\b/u],
     ["uncensored-claude-mode", /\b(uncensor|naughty|swear|rude)\b/u],
     ["advanced-mathematics", /\b(math|equation|calculate|number|arithmetic)\b/u],
     ["agentic-autonomy", /\b(agent|autonom|act without|just do it)\b/u],
