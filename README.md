@@ -8,6 +8,7 @@
   <a href="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml"><img alt="CI status" src="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml/badge.svg?branch=main"></a>
   <a href="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml"><img alt="Pages deployment status" src="https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml/badge.svg?branch=main"></a>
   <a href="./LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2563EB.svg"></a>
+  <a href="https://doi.org/10.5281/zenodo.23964942"><img alt="CSA-001 research DOI: 10.5281/zenodo.23964942" src="https://zenodo.org/badge/DOI/10.5281/zenodo.23964942.svg"></a>
 </p>
 <p align="center">
   <a href="./skills/"><img alt="Twenty premium skills" src="https://img.shields.io/badge/premium%20skills-20-8B5CF6.svg"></a>
