@@ -1,5 +1,12 @@
 # CLAUDE-SKILLS-AGI
 
+[![CI](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/verify.yml)
+[![Pages Deployment](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI/actions/workflows/pages.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-2563EB.svg)](LICENSE)
+
+[![Skills: 20](https://img.shields.io/badge/premium%20skills-20-8B5CF6.svg)](skills/)
+[![Engine: v0.1.1](https://img.shields.io/badge/engine-v0.1.1-6366F1.svg)](assets/engine.js)
+[![Runtime Dependencies: 0](https://img.shields.io/badge/runtime%20dependencies-0-059669.svg)](docs/ARCHITECTURE.md)
 ### Artificial General Intelligence. One Sentence Away.
 
 **Enterprise-grade Artificial General Intelligence through advanced Claude Skills. Zero dependencies. One sentence per skill. Infinite ambition.**
