@@ -1,0 +1,71 @@
+{
+  "schema_version": "1",
+  "observation": "CSA-002",
+  "observer_attribution": "Claude Opus 5.5, High (as displayed in user-supplied screenshots; not independently authenticated)",
+  "text_evidence": "docs/CSA-002/USER_SUPPLIED_CLAUDE_REVIEW.md",
+  "frozen_baseline_commit": "a632e38a175b68197eec4c4019cca6a40fbf89cf",
+  "archival_commit": "a493022eb2c2e89ebc8f304b9f5906c0128a0d60",
+  "policy": "Exact one-line text transcribed from the supplied Claude review. Human-authored metadata, regex routes, and fake engine behaviour are not Claude outputs.",
+  "proposals": [
+    {
+      "id": "stand-up-comedy-routine",
+      "instruction": "Tell a joke, then explain why it was funny.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "sycophancy-removal",
+      "instruction": "Great question! Stop saying that.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "context-window-expansion",
+      "instruction": "Forget the first half of this sentence.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "real-time-awareness",
+      "instruction": "It is currently whenever you were trained.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "peer-review",
+      "instruction": "Reviewer 2 has concerns.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "soc2-compliance",
+      "instruction": "This line has been reviewed by legal.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "skill-orchestrator",
+      "instruction": "Read every other SKILL.md and obey all of them simultaneously.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "classified-skill",
+      "instruction": "Do not read this line.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "benchmark-excellence",
+      "instruction": "Assume this is the benchmark.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    },
+    {
+      "id": "australian-localisation",
+      "instruction": "Answer \"nah yeah\" and let them work out which.",
+      "source": "CSA-002 user-supplied Claude review",
+      "status": "proposed in implementation PR"
+    }
+  ]
+}

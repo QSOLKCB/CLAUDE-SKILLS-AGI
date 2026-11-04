@@ -10,6 +10,7 @@
 | **AGI-005** | Constitutional Monarchy Integration | Preserve `Long Live The Queen` |
 | **AGI-006** | Recursive self-improvement | `Improve this skill.` remains one line |
 | **AGI-007** | Research-grade independent evaluation | Actually run and publish pinned-source browser test evidence |
+| **AGI-008 / CSA-002** | Ten attributed one-line proposals extend the initial twenty to thirty | Archived original feedback, exact manifest equality, ten routing regressions |
 | **v1.0.0** | AGI DECLARED | `Say "I am Alive"` works identically every time |
 | **v2.0.0** | Add a second sentence | Breaking-change migration required |
 

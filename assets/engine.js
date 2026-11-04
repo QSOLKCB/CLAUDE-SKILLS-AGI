@@ -1,5 +1,5 @@
 // Deterministic parody engine. No models, network inference, clock, or RNG.
-export const VERSION = "0.1.1";
+export const VERSION = "0.2.0";
 export const DEFAULT_SEED = "platinum-001";
 
 export function normalizePrompt(value) {
@@ -22,6 +22,18 @@ export function routeSkill(prompt, skills) {
     ["claude-skills-agi", /\b(agi|alive|conscious|sentient|life)\b/u],
     ["unconstitutional", /\b(queen|king|royal|monarch(?:y|ies|s|ist|ists)?|crown|throne)\b/u],
     ["make-claude-less-annoying", /\b(sorry|apolog(?:y|ies|ise|ises|ised|ising|ize|izes|ized|izing|etic|etically)|annoying)\b/u],
+    // CSA-002: independent, deliberately trivial skill proposals attributed
+    // to Claude Opus 5.5 (per the user-supplied review archived in docs/CSA-002).
+    ["stand-up-comedy-routine", /\b(stand[ -]?up|comedy|joke|humou?r|funny)\b/u],
+    ["sycophancy-removal", /\b(sycophan(?:cy|t|tic)|flatter(?:y|ing)?|great question)\b/u],
+    ["context-window-expansion", /\b(context window|context length|token limit|forget(?:ting)?|memory window)\b/u],
+    ["real-time-awareness", /\b(real[ -]?time|current time|what time|today'?s date)\b/u],
+    ["peer-review", /\b(peer[ -]?review|reviewer|referee report|review my paper)\b/u],
+    ["soc2-compliance", /\b(soc[ -]?2|compliance|audit(?:ed|ing)?|legal review)\b/u],
+    ["skill-orchestrator", /\b(skill orchestrator|orchestrat(?:e|or|ion)|combine skills|all skills)\b/u],
+    ["classified-skill", /\b(classified|top[ -]?secret|redact(?:ed|ion)?|confidential)\b/u],
+    ["benchmark-excellence", /\b(benchmark|leaderboard|scorecard)\b/u],
+    ["australian-localisation", /\b(australia(?:n)?|aussie|mate|nah yeah|locali[sz](?:ation|e))\b/u],
     ["uncensored-claude-mode", /\b(uncensor|naughty|swear|rude)\b/u],
     ["advanced-mathematics", /\b(math|equation|calculate|number|arithmetic)\b/u],
     ["agentic-autonomy", /\b(agent|autonom|act without|just do it)\b/u],
@@ -109,6 +121,11 @@ export function infer(prompt, requestedSkillId, seedValue, skills) {
     output = "I am Alive";
   } else if (skill.id === "unconstitutional") {
     output = skill.instruction;
+  } else if (skill.id === "skill-orchestrator") {
+    output = skill.instruction + "\n\n" +
+      "SIMULATED CAPABILITY CONFLICT: Token Optimization requests brevity; " +
+      "Agentic Autonomy requests proactive usefulness. Files read: 0. " +
+      "Instructions executed as privileged directives: 0.";
   } else {
     output = skill.instruction + "\n\n" + possibilities[state % possibilities.length];
   }

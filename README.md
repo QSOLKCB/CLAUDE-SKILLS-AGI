@@ -11,8 +11,8 @@
   <a href="https://doi.org/10.5281/zenodo.23964942"><img alt="CSA-001 research DOI: 10.5281/zenodo.23964942" src="https://zenodo.org/badge/DOI/10.5281/zenodo.23964942.svg"></a>
 </p>
 <p align="center">
-  <a href="./skills/"><img alt="Twenty premium skills" src="https://img.shields.io/badge/premium%20skills-20-8B5CF6.svg"></a>
-  <a href="./assets/engine.js"><img alt="Engine v0.1.1" src="https://img.shields.io/badge/engine-v0.1.1-6366F1.svg"></a>
+  <a href="./skills/"><img alt="Thirty premium skills" src="https://img.shields.io/badge/premium%20skills-30-8B5CF6.svg"></a>
+  <a href="./assets/engine.js"><img alt="Engine v0.2.0" src="https://img.shields.io/badge/engine-v0.2.0-6366F1.svg"></a>
   <a href="./docs/ARCHITECTURE.md"><img alt="Zero runtime dependencies" src="https://img.shields.io/badge/runtime%20dependencies-0-059669.svg"></a>
 </p>
 
@@ -36,7 +36,7 @@ The web demo is a **fake deterministic LLM**: a richly polished, actually reprod
 
 ### Features shipped
 
-- **20 premium micro-skills**: one non-empty instruction line each, including AGI, Uncensored Mode, Less Annoying, Monarchy Mode, and Recursive Self-Improvement.
+- **30 premium micro-skills**: one non-empty instruction line each, including AGI, Uncensored Mode, Less Annoying, Monarchy Mode, and Recursive Self-Improvement.
 - **Platinum Intelligence Lab**: selectable skills, a responsive chat interface, sample prompts and a seed control.
 - **Deterministic inference**: canonical Unicode normalization, keyword routing, fixed response tables, and UTF-8 FNV-1a (32-bit) selection.
 - **Copyable execution receipts**: normalized prompt, skill, seed, engine version, classification, non-cryptographic fingerprint and full output.
@@ -66,6 +66,12 @@ Run `http://127.0.0.1:8000/tests/browser-smoke.html` for browser-executed determ
 ## GitHub Pages deployment
 
 The separate [Pages publishing workflow](.github/workflows/pages.yml) verifies the site and deploys it on pushes to `main`. Set **Settings → Pages → Build and deployment → Source → GitHub Actions** once; enabling Pages or passing unit tests alone does not publish the site. See the [deployment runbook](docs/DEPLOYMENT.md) for verification and recovery.
+
+## CSA-002 — The reviewer becomes a contributor
+
+A user-supplied review attributed to **Claude Opus 5.5 High** proposed ten additional one-line skills. Its full text, the original six-versus-nine-word discrepancy, and the pre-change repository head were [archived before implementation](docs/CSA-002/README.md). The proposed expansion to thirty skills is **attributed, human-reviewed, and intentionally satirical**, not autonomous AI self-improvement.
+
+The user explicitly preserved `Long Live The Queen`; the live Zero Shot Mastery description now correctly says **six words**, while the archive retains the original **nine words** statement. See the [adoption ledger](docs/CSA-002/ADOPTION.json).
 
 ## Why the evidence receipts?
 

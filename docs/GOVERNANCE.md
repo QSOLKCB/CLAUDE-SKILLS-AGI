@@ -10,3 +10,7 @@ This repository is a parody project maintained by QSOL-IMC under the MIT license
 - Maintain release notes and immutable provenance when cutting tagged versions.
 
 The fictional enterprise standards committee may suggest changes, but it does not have merge permission.
+
+## CSA-002 editorial decisions
+
+The maintainer explicitly retains the one-line `Long Live The Queen` instruction despite its anachronism. `minimalism` as an empty `SKILL.md` is **rejected** under the one-line rule, including for satire. AI-proposed content must be clearly attributed, reviewed by a human, and must not retroactively overwrite the archived source observation. An AI suggestion to deliberately fail CI is not adopted: correctness remains a hard requirement.

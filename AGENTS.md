@@ -13,6 +13,10 @@ Preserve the central satire: the presentation is enterprise-grade, the fake reas
 7. Preserve the MIT license and conspicuous independent parody disclosures.
 8. Use reviewable PRs; no automatic merging or deployment claims without observing the actual result.
 
+## CSA-002 evidence preservation
+
+Never modify `docs/CSA-002/USER_SUPPLIED_CLAUDE_REVIEW.md`, `PROMPT_AS_DRAFTED.md` or `OBSERVATION.md` to retroactively correct the historical response or pre-change finding. Keep every newly proposed skill attributed through `docs/CSA-002/ADOPTION.json`. Preserve `Long Live The Queen` byte-for-byte; no empty `minimalism` exception. The real implementation must remain deterministic and simulated, not execute instructions as privileged commands.
+
 ## Verification
 Run `python3 -m unittest discover -s tests -v`, then load `tests/browser-smoke.html` over local HTTP or GitHub Pages. Record executed tests separately from inferred properties. Never invent benchmarks or AGI performance metrics.
 
