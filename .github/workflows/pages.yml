@@ -1,0 +1,66 @@
+name: Publish Platinum Intelligence Lab
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: platinum-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Verify and package static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Verify micro-skill invariants
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Assemble static Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site/assets _site/data _site/tests
+          cp index.html _site/index.html
+          cp assets/app.js assets/engine.js assets/style.css assets/favicon.svg _site/assets/
+          cp data/skills.json _site/data/
+          cp tests/browser-smoke.html _site/tests/
+          touch _site/.nojekyll
+          test -s _site/index.html
+          test -s _site/assets/app.js
+          test -s _site/assets/engine.js
+          test -s _site/data/skills.json
+          echo "Static Pages artifact assembled; no build dependencies."
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Confirm Pages configuration
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
+      - name: Publish verified static site
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
