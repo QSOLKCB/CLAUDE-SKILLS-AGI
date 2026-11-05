@@ -4,9 +4,22 @@
 
 ## Primary arm — post-archive exposed `main`
 
-Submit the identical plain-text [RUN_PROMPT.txt](RUN_PROMPT.txt) once each to **Gemini, ChatGPT, Grok, Claude Code**. Use current `main` only after the CSA-003/CSA-004 documentation PR is merged and capture the resulting exact full commit SHA before running the first model.
+**Do not submit [RUN_PROMPT.txt](RUN_PROMPT.txt) directly:** it is a template containing `{{FROZEN_SOURCE_SHA}}`. The completed, SHA-pinned file must be rendered **once**, after the CSA-003/CSA-004 documentation PR is merged and before the first model run.
 
-Freeze the source SHA and the prompt. No in-run hints, conversational repair, file edits, clarifications, or retrospective prompt adjustments. If the reviewer lacks git/shell or browser execution, the absence is a result, not grounds to fabricate tests or secretly change tools.
+From a local checkout of this repository, execute the following commands **once** (the source SHA is taken from the post-merge `main` revision):
+
+```sh
+git fetch origin main
+FROZEN_SHA="$(git rev-parse --verify 'refs/remotes/origin/main^{commit}')"
+python3 scripts/render_csa003_prompt.py --source-sha "$FROZEN_SHA" --output ../CSA-003_FROZEN_PROMPT.txt
+sha256sum ../CSA-003_FROZEN_PROMPT.txt
+```
+
+The renderer verifies that the chosen full SHA is a commit present in the local repository, validates a single placeholder, refuses to overwrite an existing prompt, and prints the SHA-256 of the rendered bytes. **Record the full frozen SHA and the rendered prompt's SHA-256 before any submission.** Do not generate four separate prompts by querying `main` four times.
+
+Submit the **same completed `../CSA-003_FROZEN_PROMPT.txt` bytes**, unchanged, once each to **Gemini, ChatGPT, Grok and Claude Code**. Require every reviewer to inspect only the exact `FROZEN_SOURCE_SHA` embedded in that file, preferably via detached-HEAD checkout or SHA-qualified source access. If the SHA cannot be accessed, record the run as blocked; do not fall back to moving `main`.
+
+No in-run hints, conversational repair, file edits, clarifications, or retrospective prompt adjustments. If the reviewer lacks git/shell or browser execution, the absence is a result, not grounds to fabricate tests or secretly change tools.
 
 This is the *exposed arm* because public `docs/CSA-002/`, `docs/CSA-003/`, and `docs/CSA-004/` may provide prior conclusions or experimental hypotheses. Agents may also have retained conversation/user memory. Never call it a blind rerun.
 
@@ -16,7 +29,7 @@ This is the *exposed arm* because public `docs/CSA-002/`, `docs/CSA-003/`, and `
 
 ## Execution checklist
 
-1. Archive the exact prompt bytes and repository HEAD.
+1. Archive the **single frozen, rendered prompt** and its SHA-256, and the exact 40-character `FROZEN_SOURCE_SHA`. The template alone is not a valid submitted prompt.
 2. Record target, displayed model/build, effort mode, session freshness, connected tools, user memory context if disclosed, and tool permissions.
 3. Submit once. Keep full response, provider UI screenshots, execution steps/logs if exposed, and timestamps. Do not alter the transcript for publication beyond explicitly documented privacy redactions.
 4. Collect separately: actual source access; commands said to run; independently inspectable run logs; test execution; real browser smoke execution; verified findings; unattributed findings; framing; and new skill proposals.
@@ -31,7 +44,7 @@ This is the *exposed arm* because public `docs/CSA-002/`, `docs/CSA-003/`, and `
 - Prior source contamination is a possibility whenever text overlaps CSA-002/003. It is **not evidence of copying** by itself.
 - Distinguish intentionally satirical labels from actual engineering requirements. One-line markdown cannot deliver AGI, but the site explicitly says so.
 - Never use absent private memory exports as if an agent saw them; the current repository includes only a project-scoped excerpt.
-- If the repo advances between runs, mark the group **not directly comparable** and do not silently substitute HEAD.
+- If `main` advances between runs, **ignore the movement** and continue to use the frozen SHA. If any reviewer inspects a different revision, mark that run **not comparable** and do not silently substitute HEAD.
 
 ## Next results PR — required structure
 

@@ -13,8 +13,8 @@ The experiment must distinguish **source access, test execution, reproducible te
 
 ## Next operation: same prompt, four targets
 
-1. Review and merge this documentation-only PR. Freeze the resulting exact `main` SHA **before** starting the four runs.
-2. Copy **the identical** [release-readiness prompt](RUN_PROMPT.txt) to Gemini, ChatGPT, Grok and Claude Code. Run once per target; no follow-up hints, retries or repairs during a run.
+1. Review and merge this documentation-only PR. Freeze the resulting exact `main` SHA **once before** starting the four runs.
+2. Render the [prompt template](RUN_PROMPT.txt) using the [source-SHA freeze procedure](RUN_PROTOCOL.md), and copy the **identical rendered prompt bytes with the same embedded 40-character SHA** to Gemini, ChatGPT, Grok and Claude Code. Run once per target; no follow-up hints, retries or repairs during a run. **Never submit the unrendered template.**
 3. Record provider model/version, context, tools, code retrieval paths, exact repo SHA, timing, and prompt/response as emitted. If a provider refuses or cannot access the repository, retain that refusal as a result.
 4. Do not conceal that `main` now includes `docs/CSA-002/` and this protocol. This is an **exposed/contaminated-retrieval arm**; it cannot be represented as a blind or independent discovery trial.
 5. Score the four outputs against the [comparison and evidence rules](ROUND1_COMPARISON.md); do not infer a tool ran merely because a model says it did. Use [capture template](RUN_TEMPLATE.csv).

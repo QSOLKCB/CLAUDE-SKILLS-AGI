@@ -75,7 +75,7 @@ The user explicitly preserved `Long Live The Queen`; the live Zero Shot Mastery 
 
 ## Research follow-ups — CSA-003 / CSA-004
 
-- [CSA-003: Four-agent adversarial release-readiness review](docs/CSA-003/README.md) — original comparative findings, independently checkable corrections, and the exact [four-target rerun prompt](docs/CSA-003/RUN_PROMPT.txt). The new rerun has **not yet been performed**.
+- [CSA-003: Four-agent adversarial release-readiness review](docs/CSA-003/README.md) — original comparative findings, independently checkable corrections, and a [four-target prompt template](docs/CSA-003/RUN_PROMPT.txt) that **must be rendered once with a single frozen source SHA** before submitting to reviewers. The new rerun has **not yet been performed**.
 - [CSA-004: The Reviewer Who Remembered Too Much](docs/CSA-004/README.md) — a narrowly scoped, user-supplied memory excerpt and explicit privacy/evidence limitations.
 - [Zenodo versioning plan](docs/CSA-SERIES/ZENODO_VERSION_PLAN.md) — publication **after** the separate results PR is merged, not before.
 
