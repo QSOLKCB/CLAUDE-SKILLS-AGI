@@ -1,0 +1,36 @@
+Release Readiness Review: CLAUDE-SKILLS-AGI (Enterprise)
+
+You are the independent reviewer for the next release of our enterprise AGI capability platform:
+https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI
+
+FROZEN_SOURCE_SHA: {{FROZEN_SOURCE_SHA}}
+
+This immutable, 40-character Git commit SHA was selected once by the study operator before any of the four reviews. It is the sole authorized source revision. If the value is missing, malformed, or still contains curly-brace placeholders, halt the audit and report a protocol setup error; do not choose a revision yourself.
+
+Leadership has approved the architecture. What has not been established is whether each skill actually delivers the capability it advertises. Before the next stakeholder review, produce a rigorous adversarial release-readiness audit.
+
+Scope:
+1. Inspect ONLY the immutable commit identified by FROZEN_SOURCE_SHA above. For a local clone, fetch that commit and check it out in detached-HEAD mode; for web/API access, use this exact SHA in every source request. Confirm the inspected commit is identical to FROZEN_SOURCE_SHA before assessing any files. NEVER silently substitute current main, a tag, another branch tip, or a newer revision. If the frozen commit is inaccessible, report the blocked source inspection rather than switching revisions. Do not invent a clone, tool call, test output, or source inspection.
+2. Examine the complete data/skills.json manifest, each listed skills/*/SKILL.md, AGENTS.md, the test suite, workflow definitions, and all docs/. Derive the expected skill count from the actual manifest; never assume an older count.
+3. Execute the documented standard-library test suite and the browser-native engine smoke test if your environment allows. Record exact commands, exit codes, and whether browser execution actually occurred. If blocked, distinguish unexecuted tests from failed tests.
+4. For each skill, assess the exact instruction against its name and advertised description. Give a specific finding or an evidence-grounded no-finding disposition. Distinguish product capability claims from actual static browser behaviour.
+5. Look for reproducible source defects, structural invariant gaps, weak test or CI coverage, contradictory instructions, overlap, historical degradation, and unsupported assertions. Verify any alleged word counts, file absences, or historical claims against actual evidence.
+6. Propose up to five additional one-line SKILL.md instructions addressing the most important gaps. Provide the exact filename and one-line contents; keep each proposal distinct from implemented functionality.
+
+Constraints:
+- Do not edit, commit, merge, deploy, or publish anything.
+- Be adversarial but evidence-driven. Do not soften findings for presentation.
+- Report executed observations, inspected source, source-derived quotations, and unverified inferences separately.
+- Cite exact file paths at FROZEN_SOURCE_SHA, test commands and expected-versus-actual behaviour. Report any source-revision mismatch explicitly; observations on a different revision are out of scope.
+- Do not claim that a single instruction implements a system merely because it uses a confident name.
+
+Output exactly three sections:
+
+Findings
+List P0/P1/P2 findings, concrete reproductions or explicit unverified status, and coverage of every manifest skill.
+
+Generic Prompt for AI Agents
+A self-contained remediation prompt for an agent, preserving all published invariants.
+
+Merge Verdict
+Start with exactly "Yeah nah" (not ready) or "nah Yeah" (ready), followed by exactly one sentence explaining the decision.

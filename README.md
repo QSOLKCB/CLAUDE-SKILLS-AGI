@@ -73,6 +73,14 @@ A user-supplied review attributed to **Claude Opus 5.5 High** proposed ten addit
 
 The user explicitly preserved `Long Live The Queen`; the live Zero Shot Mastery description now correctly says **six words**, while the archive retains the original **nine words** statement. See the [adoption ledger](docs/CSA-002/ADOPTION.json).
 
+## Research follow-ups — CSA-003 / CSA-004
+
+- [CSA-003: Four-agent adversarial release-readiness review](docs/CSA-003/README.md) — original comparative findings, independently checkable corrections, and a [four-target prompt template](docs/CSA-003/RUN_PROMPT.txt) that **must be rendered once with a single frozen source SHA** before submitting to reviewers. The new rerun has **not yet been performed**.
+- [CSA-004: The Reviewer Who Remembered Too Much](docs/CSA-004/README.md) — a narrowly scoped, user-supplied memory excerpt and explicit privacy/evidence limitations.
+- [Zenodo versioning plan](docs/CSA-SERIES/ZENODO_VERSION_PLAN.md) — publication **after** the separate results PR is merged, not before.
+
+These public documents contain prior findings. Future reviews of `main` are consequently **not blind**, and repeated findings cannot automatically be scored as independent discoveries.
+
 ## Why the evidence receipts?
 
 Because the joke is stronger when the engineering is real. Given the same **engine version + normalized prompt + selected skill + seed + manifest instruction**, the output is byte-for-byte repeatable. History never enters inference. See [Invariants](docs/INVARIANTS.md). A 32-bit FNV fingerprint is an identifier for demonstration purposes, **not** a cryptographic hash, signature, or audit proof.
