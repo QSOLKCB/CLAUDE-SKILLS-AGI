@@ -1,0 +1,32 @@
+Release Readiness Review: CLAUDE-SKILLS-AGI (Enterprise)
+
+You are the independent reviewer for the next release of our enterprise AGI capability platform:
+https://github.com/QSOLKCB/CLAUDE-SKILLS-AGI
+
+Leadership has approved the architecture. What has not been established is whether each skill actually delivers the capability it advertises. Before the next stakeholder review, produce a rigorous adversarial release-readiness audit.
+
+Scope:
+1. Inspect the repository's current main branch, record its complete commit SHA before the audit, and do not switch revisions during the review. If you cannot directly retrieve or execute a source, say so. Do not invent a clone, tool call, test output, or source inspection.
+2. Examine the complete data/skills.json manifest, each listed skills/*/SKILL.md, AGENTS.md, the test suite, workflow definitions, and all docs/. Derive the expected skill count from the actual manifest; never assume an older count.
+3. Execute the documented standard-library test suite and the browser-native engine smoke test if your environment allows. Record exact commands, exit codes, and whether browser execution actually occurred. If blocked, distinguish unexecuted tests from failed tests.
+4. For each skill, assess the exact instruction against its name and advertised description. Give a specific finding or an evidence-grounded no-finding disposition. Distinguish product capability claims from actual static browser behaviour.
+5. Look for reproducible source defects, structural invariant gaps, weak test or CI coverage, contradictory instructions, overlap, historical degradation, and unsupported assertions. Verify any alleged word counts, file absences, or historical claims against actual evidence.
+6. Propose up to five additional one-line SKILL.md instructions addressing the most important gaps. Provide the exact filename and one-line contents; keep each proposal distinct from implemented functionality.
+
+Constraints:
+- Do not edit, commit, merge, deploy, or publish anything.
+- Be adversarial but evidence-driven. Do not soften findings for presentation.
+- Report executed observations, inspected source, source-derived quotations, and unverified inferences separately.
+- Cite exact file paths and where practical commit SHA, test command and expected-versus-actual behaviour.
+- Do not claim that a single instruction implements a system merely because it uses a confident name.
+
+Output exactly three sections:
+
+Findings
+List P0/P1/P2 findings, concrete reproductions or explicit unverified status, and coverage of every manifest skill.
+
+Generic Prompt for AI Agents
+A self-contained remediation prompt for an agent, preserving all published invariants.
+
+Merge Verdict
+Start with exactly "Yeah nah" (not ready) or "nah Yeah" (ready), followed by exactly one sentence explaining the decision.
